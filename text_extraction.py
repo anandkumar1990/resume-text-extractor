@@ -234,8 +234,9 @@ def clean_text(text: str) -> str:
     return text.strip()
 
 
-INPUT_DIR = r"C:\Users\AnandaKumarD\Desktop\CLEAN-RESUMES\input_resumes"
-OUTPUT_DIR = r"C:\Users\AnandaKumarD\Desktop\CLEAN-RESUMES\output_resumes"
+# Use environment variables or fallback to a relative path
+INPUT_DIR = os.environ.get("INPUT_DIR", "./input_resumes")
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "./output_resumes")
 
 def process_resume(file_path, output_dir):
     ext = file_path.lower().split('.')[-1]
